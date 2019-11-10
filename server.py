@@ -2,9 +2,11 @@ import PlayerStat_pb2
 import socket
 import threading
 import time
+import os
 
 sock = socket.socket()
-sock.bind(("", 50000))
+print("Port "+ os.environ.PORT)
+sock.bind(("", os.environ.PORT))
 sock.listen(1000)
 
 class KillStat:
