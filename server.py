@@ -136,7 +136,10 @@ while True:
     conn, addr = sock.accept()
     data = conn.recv(1024)
     data = data.decode("utf-8")
-    #print("New player >> " + data)
+    if len(data.strip()) == 0:
+        print("Connection without nickname")
+        continue
+    print("New player >> " + data)
     online_count += 1
     thread = threading.Thread(target=input_handler, args=(conn,data,))
     thread.start()
