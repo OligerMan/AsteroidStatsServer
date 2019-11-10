@@ -5,7 +5,7 @@ import time
 import os
 
 sock = socket.socket()
-print("Port "+ os.environ['PORT'])
+print("Port " + str(os.environ['PORT'] | 50000))
 sock.bind(("", os.environ['PORT']))
 sock.listen(1000)
 
