@@ -63,7 +63,7 @@ def input_handler(conn, nickname):
             info.ParseFromString(data)
             #print("New data from " + nickname)
             #print(("  >> {} kills; {} time survived").format(info.kills, info.time_survived))
-            print("")
+            #print("")
             if info.live:
                 if not nickname_used(nickname+"(live)"):
                     kill_rating.append(KillStat(info.kills, info.nickname + "(live)"))
