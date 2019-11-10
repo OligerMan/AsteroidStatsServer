@@ -136,7 +136,7 @@ while True:
     conn, addr = sock.accept()
     data = conn.recv(1024)
     data = data.decode("utf-8")
-    if (len(data.strip()) == 0) | data.strip() == 'GET / HTTP/1.1':
+    if (len(data.strip()) == 0) | (data.strip() == 'GET / HTTP/1.1'):
         print("Connection without nickname")
         continue
     print("New player >> " + data)
