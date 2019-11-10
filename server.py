@@ -61,8 +61,8 @@ def input_handler(conn, nickname):
             data = conn.recv(1024)
             info = PlayerStat_pb2.PlayerInfo()
             info.ParseFromString(data)
-            print("New data from " + nickname)
-            print(("  >> {} kills; {} time survived").format(info.kills, info.time_survived))
+            #print("New data from " + nickname)
+            #print(("  >> {} kills; {} time survived").format(info.kills, info.time_survived))
             print("")
             if info.live:
                 if not nickname_used(nickname+"(live)"):
@@ -136,7 +136,7 @@ while True:
     conn, addr = sock.accept()
     data = conn.recv(1024)
     data = data.decode("utf-8")
-    print("New player >> " + data)
+    #print("New player >> " + data)
     online_count += 1
     thread = threading.Thread(target=input_handler, args=(conn,data,))
     thread.start()
