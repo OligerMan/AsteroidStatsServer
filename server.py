@@ -5,8 +5,8 @@ import time
 import os
 
 sock = socket.socket()
-print("Port "+ os.environ.PORT)
-sock.bind(("", os.environ.PORT))
+print("Port "+ os.environ['PORT'])
+sock.bind(("", os.environ['PORT']))
 sock.listen(1000)
 
 class KillStat:
