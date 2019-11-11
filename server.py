@@ -138,6 +138,7 @@ while True:
     data = data.decode("utf-8")
     if (len(data.strip()) == 0) | (data.strip() == 'GET / HTTP/1.1'):
         print("Connection without nickname")
+        print("Try for >> " + data)
         continue
     print("New player >> " + data)
     online_count += 1
