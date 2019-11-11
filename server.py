@@ -134,6 +134,7 @@ thread.start()
 
 while True:
     conn, addr = sock.accept()
+    print("Some socket found")
     data = conn.recv(1024)
     data = data.decode("utf-8")
     if (len(data.strip()) == 0) | (data.strip() == 'GET / HTTP/1.1'):
